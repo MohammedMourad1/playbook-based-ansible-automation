@@ -1,0 +1,15 @@
+service_name: apache2
+path_resolve: /etc/resolv.conf
+path_script: ./list_users.sh
+
+
+users:
+  - user1
+  - user2
+  - user3
+  - user4
+  - user5
+
+user_state: present
+
+dns_line: "nameserver 8.8.8.8"

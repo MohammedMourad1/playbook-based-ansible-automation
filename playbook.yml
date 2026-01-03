@@ -1,0 +1,52 @@
+- name: Project
+  hosts: all
+  vars_files:
+    - vault.yml
+  become: yes
+  tasks:    
+
+
+    - name: Add Five users
+      user:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ users }}"
+
+
+    - name: update cache
+      apt:
+        update_cache: yes
+
+
+    - name: install apache2
+      apt:
+        name: "{{ service_name }}"
+        state: latest
+      notify:
+        - Restart apache2
+
+    - name: Start the service
+      service:
+        name: "{{ service_name }}"
+        state: started
+ 
+
+    - name: update resolve.conf and add nameserver 8.8.8.8
+      lineinfile:
+        path: "{{ path_resolve }}"
+        line: "{{ dns_line }}"
+
+    - name: run a script that lists all existing users
+      script: "{{ path_script }}"
+      register: script_output
+
+
+    - name: show output
+      debug: 
+       var: script_output
+
+  handlers:
+    - name: Restart apache2
+      service:
+        name: "{{ service_name }}"
+        state: restarted

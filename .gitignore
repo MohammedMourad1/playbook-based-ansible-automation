@@ -1,0 +1,5 @@
+# Secrets
+.vault_pass
+
+# Local inventory
+inventory.ini
