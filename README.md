@@ -46,6 +46,7 @@ This approach mirrors common security practices used in real production environm
 ├── .gitignore            # Git ignore rules
 └── README.md             # Project documentation
 
+```
 
 ## ▶️ How to Run the Playbook
 
