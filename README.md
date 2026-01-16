@@ -19,6 +19,37 @@ This Ansible playbook automates common system administration tasks, including:
 - Managing sensitive credentials securely using **Ansible Vault**
 
 ---
+## ▶️ How to Run the Playbook
+
+### Prerequisites
+- Linux control machine
+- Ansible installed
+- SSH access to target hosts
+- Ansible Vault password available
+
+---
+
+### Step 1: Inventory
+
+Create a local inventory file named inventory.ini:
+
+[servers]
+192.168.1.10
+192.168.1.11
+
+---
+
+### Step 2: Run the Playbook
+
+Using interactive vault password prompt:
+
+ansible-playbook playbook.yml -i inventory.ini --ask-vault-pass --become
+
+Or using a local vault password file:
+
+ansible-playbook playbook.yml -i inventory.ini --vault-password-file .vault_pass --become
+
+---
 
 ## 🔐 Security & Secrets Management
 
