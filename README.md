@@ -1,4 +1,4 @@
-# Ansible Playbook-Based Automation Project
+# Ansible Secure System Automation
 <img width="1547" height="800" alt="image" src="https://github.com/user-attachments/assets/24f54851-00c3-47ab-9b16-a7cede123b91" />
 
 
