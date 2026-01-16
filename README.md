@@ -1,4 +1,6 @@
 # Ansible Playbook-Based Automation Project
+<img width="1547" height="800" alt="image" src="https://github.com/user-attachments/assets/24f54851-00c3-47ab-9b16-a7cede123b91" />
+
 
 This repository contains a **playbook-based Ansible automation project** that demonstrates real-world infrastructure automation concepts with a strong focus on **security, structure, and best practices**.
 
